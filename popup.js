@@ -1,11 +1,11 @@
 
-const saveCheckbox = document.getElementById('ON');
+const saveCheckbox = document.getElementById('toggle-input');
 
 saveCheckbox.addEventListener('change', valueChange);
 
 function valueChange(){
     //console.log("vc_call")
-    const check = document.getElementById("ON");
+    const check = document.getElementById("toggle-input");
     if(check.checked){
         chrome.runtime.sendMessage({
             greeting:"ON",
@@ -34,7 +34,7 @@ chrome.runtime.sendMessage({
 });
 
 function inputChange(event){
-    const check = document.getElementById("ON");
+    const check = document.getElementById("toggle-input");
     min.innerText = ((slider.value/10)+1) + 'M';
     if(check.checked){
         chrome.runtime.sendMessage({
